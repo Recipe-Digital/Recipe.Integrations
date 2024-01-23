@@ -1,0 +1,127 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.header {
+    background: rgba(74, 111, 211, 0.979);
+    color: antiquewhite;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  width: 100vw;
+
+}
+.contaneir {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+
+}
+.paciente {
+  background-color:aliceblue;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+.medico > .input-paciente{
+    background-color: beige;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  .prescricao > .select {
+    background-color: burlywood;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+ }
+form{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    flex-wrap: wrap;
+}
+.header-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+}
+
+.input-paciente {
+  display: flex;
+  gap: 4px;
+}
+
+label {
+  width: 100px;
+}
+.sub {
+  display: flex;
+  gap: 8px;
+}
+.footer{
+    background: rgba(74, 111, 211, 0.979);
+    color: antiquewhite;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0px -10px 15px -3px rgba(0,0,0,0.1);
+}
+.footer > p{
+    margin: 4px;
+}
+.submit-btn{
+    height: 3rem;
+    margin-top: auto;
+    border: 1px solid #cecece;
+    background: rgba(74, 111, 211, 0.979);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    color: aliceblue;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+}
+.input-endereco{
+  display: flex;
+  gap: 8px;
+}
+.paciente-c, .endereco-c{
+    border: 1px black solid;
+    margin-top: 8px;
+    display: flex;
+flex-direction: column;
+gap: 4px;
+padding-left: 8px;
+
+}
+
+.medico, .prescricao{
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+
+}
+.bairro{
+  width: auto;
+}
+.numeroDoMedico{
+  width: auto;
+}

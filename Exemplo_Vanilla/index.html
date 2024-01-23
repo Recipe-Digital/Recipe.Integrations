@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB EMPRESA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header"> Aplicação Web Simulando integração</header>
+    <main class="contaneir">
+        <form onsubmit="myFunction(event)">
+
+            <div class="paciente">
+                <div class="paciente-c">
+                    <p class="header-form">Paciente</p>
+
+                    <div class="input-paciente">
+                        <label>Nome: </label>
+                        <input id="nomeCompleto" name="nomeCompleto" placeholder="Nome do Paciente" />
+                    </div>
+                    <div class="input-paciente">
+                        <label>CPF: </label>
+                        <input id="documento" name="documento" placeholder="Cpf do Paciente" />
+                    </div>
+                    <div class="input-paciente">
+                        <label>Telefone: </label>
+                        <input id="telefone" name="telefone" placeholder="Telefone do Paciente" />
+                    </div>
+                    <div class="input-paciente">
+                        <label>Email: </label>
+                        <input id="email" name="email" placeholder="Telefone do Paciente" />
+                    </div>
+                </div>
+                <div class="endereco-c">
+                    <p class="header-form">Endereco</p>
+                    <div class="input-endereco">
+                        <label>Logradouro: </label>
+                        <input id="logradouro" name="logradouro" placeholder="Lougradouro" />
+                    </div>
+                    <div class="sub">
+                        <div class="input-endereco">
+                            <label>Numero: </label>
+                            <input id="numero" name="numero" placeholder="Numero" />
+                        </div>
+                        <div class="input-endereco">
+                            <label>Complemento: </label>
+                            <input id="complemento" name="complemento" placeholder="Complemento" />
+                        </div>
+                    </div>
+                    <div class="sub">
+                        <div class="input-endereco">
+                            <label>Estado: </label>
+                            <input id="estado" name="estado" placeholder="Estado" />
+                        </div>
+                        <div class="input-endereco">
+                            <label>Cidade: </label>
+                            <input id="cidade" name="cidade" placeholder="Cidade" />
+                        </div>
+                        <div class="input-endereco">
+                            <label class="bairro">Bairro: </label>
+                            <input id="bairro" name="bairro" placeholder="Bairro" />
+                        </div>
+                    </div>
+                    <div class="input-endereco">
+                        <label>CEP: </label>
+                        <input id="cep" name="cep" placeholder="CEP" />
+                    </div>
+                </div>
+            </div>
+            <div class="medico">
+
+                <div class="input-paciente">
+                    <label for="numeroDoMedico" class="numeroDoMedico">Numero do Medico: </label>
+                    <input id="numeroDoMedico" name="numeroDoMedico" placeholder="Numero do medico" />
+                </div>
+            </div>
+            <div class="prescricao">
+                <div class="select">
+                    <label for="tipoPrescricao"> Tipo de prescriição</label>
+                    <select id="tipoPrescricao" name="tipoPrescricao">
+                        <option value="100">Nenhum</option>
+                        <option value="1">Receita</option>
+                        <option value="2">Exame</option>
+                        <option value="3">Atestado</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div>
+                <button class="submit-btn">Escrever Prescrição</button>
+            </div>
+        </form>
+
+    </main>
+    <footer class="footer">
+        <p>
+            Recipe Digital
+        </p>
+        <p>
+            © Copyright - 2024
+        </p>
+
+    </footer>
+
+    <script  type="application/javascript" src="https://int.recipedigital.com.br/scripts/recipe-integration-dev.min.js" defer></script>
+    <script>
+        function myFunction(e) {
+            e.preventDefault();
+            const ApiKey = "39/1v70h1H/ex2h4_CfSVBh8703m3kgnxaM4e5f9sLN4*00*4P20S6u7dFbs>3Wbub8Pd0*UqeWd0p8Q:Wd8K68y9ie<3603akXmnur"
+            const numeroDoMedico = document.getElementById("numeroDoMedico").value;
+            const tipoPrescricao = document.getElementById("tipoPrescricao").value;
+            const nomeCompleto = document.getElementById("nomeCompleto").value;
+            const documento = document.getElementById("documento").value;
+            const telefone = document.getElementById("telefone").value;
+            const email = document.getElementById("email").value;
+            const logradouro = document.getElementById("logradouro").value;
+            const numeroEndereco = document.getElementById("numero").value; 
+            const complemento = document.getElementById("complemento").value;
+            const estado = document.getElementById("estado").value;
+            const cidade = document.getElementById("cidade").value;
+            const bairro = document.getElementById("bairro").value;
+            const cep = document.getElementById("cep").value;
+
+            const request = {
+                ApiKey,
+                numeroDoMedico,
+                tipoPrescricao,
+                paciente: {
+                    nomeCompleto,
+                    documento,
+                    telefone,
+                    email,
+                    endereco: {
+                        logradouro,
+                        numeroEndereco,
+                        complemento,
+                        estado,
+                        cidade,
+                        bairro,
+                        cep
+                    }
+                }
+            }
+            fazerRequisicao(request)
+
+        }
+    </script>
+
+</body>
+
+</html>
